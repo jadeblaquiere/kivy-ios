@@ -24,7 +24,8 @@ class PillowRecipe(Recipe):
         build_env["C_INCLUDE_PATH"] = join(arch.sysroot, "usr", "include")
         build_env["LIBRARY_PATH"] = join(arch.sysroot, "usr", "lib")
         build_env["CFLAGS"] = " ".join([
-            "-I{}".format(join(self.ctx.dist_dir, "include", arch.arch, "freetype")) +
+            arch.version_min, 
+			"-I{}".format(join(self.ctx.dist_dir, "include", arch.arch, "freetype")) +
             " -I{}".format(join(self.ctx.dist_dir, "include", arch.arch, "libjpeg")) +
             " -arch {}".format(arch.arch)
             ])
