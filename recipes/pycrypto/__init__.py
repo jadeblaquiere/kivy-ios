@@ -42,3 +42,4 @@ class PycryptoRecipe(CythonRecipe):
         shprint(hostpython, "setup.py", "install", "--prefix", dest_dir, _env=build_env)
 
 recipe = PycryptoRecipe()
+
